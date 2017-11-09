@@ -26,14 +26,10 @@ class HtmlParse:
       for danger in self.Lst_Dangerous:
         for item in self.Soup.findAll("tr",{"class": danger}):
           td_Tag = item.findAll('td')
-          self.hMap_Files[int(td_Tag[4].text)] = td_Tag[2].text
+          self.hMap_Files[int(td_Tag[4].text)] = self.WorkingDir + td_Tag[2].text
               # self.writeToFile(allTag[2].text, allTag[4].text)
-      Lst_Name = set (item for item in self.hMap_Files.values())
-      hMap_FullPath = {}
-      for fName in Lst_Name:
-          hMap_FullPath.update({fName : self.WorkingDir + fName})
       for key, value in sorted(self.hMap_Files.iteritems(), key=lambda (k, v): (v, k)):
-        self.writeToFile(self.WorkingDir + hMap_FullPath[value], key);
+        self.writeToFile(self.hMap_Files[key], key);
 
   def getWorkingDir(self):
   #find first table for collecting information
