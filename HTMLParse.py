@@ -4,7 +4,6 @@ import os, errno
 
 
 class HtmlParse:
-
   SoureFile = ""
   Output = ""
   WorkingDir = ""
