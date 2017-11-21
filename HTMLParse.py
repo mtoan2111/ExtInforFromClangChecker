@@ -34,7 +34,7 @@ class HtmlParse:
         for item in self.Soup.findAll("tr",{"class": self.Lst_Dangerous}):
           td_Tag = item.findAll('td')
           self.hMap_Files[int(td_Tag[4].text)] = self.WorkingDir + td_Tag[2].text
-        for key, value in sorted(self.hMap_Files.iteritems(), key=lambda (k, v): (v, k)):
+        for key in sorted(self.hMap_Files.keys()):
           fp.writelines(self.hMap_Files[key] + ": " + str(key) + "\n");
         print ("Analyzing success fully")
         print ("Ouput file dir:",self.Output )
