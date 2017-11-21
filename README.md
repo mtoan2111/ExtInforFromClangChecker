@@ -11,3 +11,7 @@ Or,
     cd beautifulsoup4-4.0.0b3
     sudo python setup.py install
 ```
+Using
+```
+    python ExtDangerousFile.py path/to/extracted/file/from/clang/checker
+```
