@@ -34,10 +34,10 @@ class HtmlParse:
         for item in self.Soup.findAll("tr",{"class": self.Lst_Dangerous}):
           td_Tag = item.findAll('td')
           self.hMap_Files[int(td_Tag[4].text)] = self.WorkingDir + td_Tag[2].text
-          for key, value in sorted(self.hMap_Files.iteritems(), key=lambda (k, v): (v, k)):
-            fp.writelines(self.hMap_Files[key] + ": " + str(key) + "\n");
-        print ("Analyzing success fully")
-        print ("Ouput file dir:",self.Output )
+        for key, value in sorted(self.hMap_Files.iteritems(), key=lambda (k, v): (v, k)):
+          fp.writelines(self.hMap_Files[key] + ": " + str(key) + "\n");
+        print ("\033[95mAnalyzing success fully \033[0m")
+        print ("\033[92mOuput file: \033[0m" +'\033[94m' +self.Output  + '\033[0m')
     else:
       print ("Oops: doesn't have any warning that you want")
 

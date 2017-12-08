@@ -3,7 +3,7 @@ from HTMLParse import HtmlParse
 import sys, os, datetime
 
 class Analyzing:
-  list_dangerous = []
+  list_dangerous = list()
   test = HtmlParse
   def __init__(self):
     self.list_dangerous.append("bt_security_potential_insecure_memory_buffer_bounds_restriction_in_call_strcpy_")
@@ -13,7 +13,7 @@ class Analyzing:
       print ("Oops: Missing input direction")
       return
     if os.path.isdir(sys.argv[1]) == 0:
-      print ("Oops: Input does not dir")
+      print ("Oops: Directory does not exist")
       return
     time = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
     Html = HtmlParse(sys.argv[1] + "/index.html",sys.argv[1] +"/" + time + ".txt", self.list_dangerous)
