@@ -13,7 +13,7 @@ class HtmlParse:
 
   def __init__(self, SoureFile, Output, ListDangerous):
     if os.path.exists(SoureFile) == 0:
-      print ("Oops: Missing HTML file in dir")
+      print ("Oops: Missing HTML index file")
       return
     self.SoureFile = SoureFile
     self.Output = Output
@@ -40,7 +40,7 @@ class HtmlParse:
         print ("\033[95mAnalyzing success fully \033[0m")
         print ("\033[92mOuput file: \033[0m" +'\033[94m' +self.Output  + '\033[0m')
     else:
-      print ("Oops: doesn't have any warning that you want")
+      print ("Oops: doesn't have any warnings that you are expected")
 
   def getWorkingDir(self):
     infoTable = self.Soup.find("table")
