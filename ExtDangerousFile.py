@@ -9,6 +9,9 @@ class Analyzing:
     self.list_dangerous.append("bt_security_potential_insecure_memory_buffer_bounds_restriction_in_call_strcpy_")
     self.list_dangerous.append("bt_security_potential_insecure_memory_buffer_bounds_restriction_in_call_strcat_")
     self.list_dangerous.append("bt_logic_error_out-of-bound_array_access")
+    self.list_dangerous.append("bt_logic_error_out-of-bound_access")
+    self.list_dangerous.append("bt_general_tainted_data")
+
     if len(sys.argv) < 2:
       print ("Oops: Missing input direction")
       return
