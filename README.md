@@ -13,5 +13,5 @@ Or,
 ```
 Using
 ```
-    python ExtDangerousFile.py path/to/extracted/file/from/clang/checker
+    python ExtDangerousFile.py path/to/extracted/folder/from/clang/checker
 ```
